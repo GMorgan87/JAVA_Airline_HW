@@ -31,6 +31,8 @@ public class Plane {
     }
 
     public void addPassenger(Passenger passenger) {
+        if(getSeats() > 0){
         this.passengers.add(passenger);
+        }
     }
 }

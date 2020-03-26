@@ -42,4 +42,12 @@ public class PlaneTest {
         plane1.addPassenger(passenger1);
         assertEquals(1, plane1.getSeats());
     }
+
+    @Test
+    public void cantAddPassengerIfPlaneIsFull(){
+        plane1.addPassenger(passenger1);
+        plane1.addPassenger(passenger2);
+        plane1.addPassenger(passenger1);
+        assertEquals(0, plane1.getSeats());
+    }
 }
