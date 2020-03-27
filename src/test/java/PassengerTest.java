@@ -12,12 +12,11 @@ public class PassengerTest {
     Plane plane;
     Date depTime;
 
-
     @Before
     public void before() {
         passenger1 = new Passenger("Gareth", 2);
+        plane = new Plane(PlaneType.GULFSTREAMG650, 1, 10000);
         flight = new Flight(plane, "BE7612", "EDI", "LCY", depTime);
-
     }
 
     @Test
@@ -34,6 +33,12 @@ public class PassengerTest {
     public void passengerHasFlight(){
         flight.add(passenger1);
         assertEquals(flight, passenger1.getFlight());
+    }
+
+    @Test
+    public void passengerHasSeatNumber(){
+        flight.add(passenger1);
+        assertEquals(1, passenger1.getSeatNumber());
     }
 
 }
